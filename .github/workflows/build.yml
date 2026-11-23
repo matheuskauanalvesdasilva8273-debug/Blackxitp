@@ -17,10 +17,11 @@ jobs:
         uses: gradle/actions/setup-gradle@v3
 
       - name: Build APK
-        run: gradle assembleDebug
-        working-directory: .
+        run: |
+          ls -la
+          gradle assembleDebug --project-dir .
 
       - uses: actions/upload-artifact@v4
         with:
           name: BlackxitFF
-          path: app/build/outputs/apk/debug/*.apk
+          path: "**/*.apk"
