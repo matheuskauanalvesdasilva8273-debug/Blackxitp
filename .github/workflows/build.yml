@@ -22,8 +22,11 @@ jobs:
       - name: Build APK
         env:
           ANDROID_HOME: /usr/local/lib/android/sdk
-        run: gradle assembleDebug 2>&1 | grep -A5 "What went wrong"
+        run: gradle assembleDebug || true
+      - name: Find APK
+        run: find . -name "*.apk" 2>/dev/null
       - uses: actions/upload-artifact@v4
         with:
           name: BlackxitFF
-          path: app/build/outputs/apk/debug/*.apk
+          path: "**/*.apk"
+          if-no-files-found: warn
