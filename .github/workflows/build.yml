@@ -13,23 +13,20 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
       - name: Fix structure
         run: |
           mv .github/workflows/build.gradle . 2>/dev/null || true
           mv .github/workflows/settings.gradle . 2>/dev/null || true
           mv .github/workflows/gradlew . 2>/dev/null || true
           chmod +x gradlew
-          cat settings.gradle
-          ls -la
-          ls -la app/
-
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v3
 
       - name: Build APK
-        run: gradle :app:assembleDebug
+        run: ./gradlew assembleDebug
 
       - uses: actions/upload-artifact@v4
         with:
           name: BlackxitFF
-          path: "app/build/outputs/apk/debug/*.apk"
+          path: app/build/outputs/apk/debug/*.apk
