@@ -22,7 +22,7 @@ jobs:
       - name: Build APK
         env:
           ANDROID_HOME: /usr/local/lib/android/sdk
-        run: gradle assembleDebug
+        run: gradle assembleDebug 2>&1 | grep -A5 "What went wrong"
       - uses: actions/upload-artifact@v4
         with:
           name: BlackxitFF
