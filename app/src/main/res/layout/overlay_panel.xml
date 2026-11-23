@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="320dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#CC000000">
+
+    <LinearLayout
+        android:id="@+id/panel_header"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#E53935"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="FIRE. P3DRO - BLACKXIT FF"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+        <ImageButton
+            android:id="@+id/btn_close"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@null"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:tint="#FFFFFF"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tab_aimbot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:visibility="visible">
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+            <CheckBox android:id="@+id/cb_aimbot"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Ativar Aimbot"
+                android:textColor="#FFFFFF"
+                android:buttonTint="#E53935"/>
+            <CheckBox android:id="@+id/cb_wall_aim"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Puxar em Paredes"
+                android:textColor="#FFFFFF"
+                android:buttonTint="#E53935"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+            <CheckBox android:id="@+id/cb_show_fov"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Exibir FOV"
+                android:textColor="#FFFFFF"
+                android:buttonTint="#E53935"
+                android:checked="true"/>
+            <CheckBox android:id="@+id/cb_show_line"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Exibir Linha"
+                android:textColor="#FFFFFF"
+                android:buttonTint="#E53935"
+                android:checked="true"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="4dp">
+            <SeekBar
+                android:id="@+id/sb_fov"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:progressTint="#E53935"
+                android:thumbTint="#E53935"/>
+            <TextView
+                android:id="@+id/tv_fov_value"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="360.0"
+                android:textColor="#E53935"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Regular FOV"
+            android:textColor="#AAAAAA"
+            android:textSize="11sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tab_esp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:visibility="gone">
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <CheckBox android:id="@+id/cb_esp"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Ativar ESP" android:textColor="#FFFFFF"
+                android:buttonTint="#E53935"/>
+            <CheckBox android:id="@+id/cb_esp_hide"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Esconder Painel" android:textColor="#FFFFFF"
+                android:buttonTint="#E53935"/>
+        </LinearLayout>
+
+        <CheckBox android:id="@+id/cb_esp_line"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="ESP Linha" android:textColor="#FFFFFF"
+            android:buttonTint="#E53935"/>
+        <CheckBox android:id="@+id/cb_esp_box"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="ESP Caixa" android:textColor="#FFFFFF"
+            android:buttonTint="#E53935"/>
+        <CheckBox android:id="@+id/cb_esp_skel"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="ESP Esqueleto" android:textColor="#FFFFFF"
+            android:buttonTint="#E53935"/>
+        <CheckBox android:id="@+id/cb_esp_name"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="ESP Nome" android:textColor="#FFFFFF"
+            android:buttonTint="#E53935"/>
+        <CheckBox android:id="@+id/cb_esp_hp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="ESP Vida" android:textColor="#FFFFFF"
+            android:buttonTint="#E53935"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tab_misc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:visibility="gone">
+
+        <CheckBox android:id="@+id/cb_aimkill"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="AimKill" android:textColor="#FFFFFF"
+            android:buttonTint="#E53935"/>
+        <CheckBox android:id="@+id/cb_no_recoil"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="No Recoil" android:textColor="#FFFFFF"
+            android:buttonTint="#E53935"/>
+        <CheckBox android:id="@+id/cb_speed"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Voar Player" android:textColor="#FFFFFF"
+            android:buttonTint="#E53935"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="#111111"
+        android:padding="8dp">
+
+        <ImageButton
+            android:id="@+id/btn_tab_aimbot"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:background="#E53935"
+            android:src="@android:drawable/ic_menu_compass"
+            android:tint="#FFFFFF"
+            android:layout_marginEnd="8dp"/>
+
+        <ImageButton
+            android:id="@+id/btn_tab_esp"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:background="#E53935"
+            android:src="@android:drawable/ic_menu_view"
+            android:tint="#FFFFFF"
+            android:layout_marginEnd="8dp"/>
+
+        <ImageButton
+            android:id="@+id/btn_tab_settings"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:background="#E53935"
+            android:src="@android:drawable/ic_menu_preferences"
+            android:tint="#FFFFFF"
+            android:layout_marginEnd="8dp"/>
+
+        <ImageButton
+            android:id="@+id/btn_tab_misc"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:background="#E53935"
+            android:src="@android:drawable/ic_menu_agenda"
+            android:tint="#FFFFFF"/>
+    </LinearLayout>
+
+</LinearLayout>
