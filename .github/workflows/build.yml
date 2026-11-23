@@ -16,15 +16,14 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Fix structure
+      - name: Fix structure and install Gradle
         run: |
           mv .github/workflows/build.gradle . 2>/dev/null || true
           mv .github/workflows/settings.gradle . 2>/dev/null || true
-          mv .github/workflows/gradlew . 2>/dev/null || true
-          chmod +x gradlew
-
-      - name: Build APK
-        run: ./gradlew assembleDebug
+          wget -q https://services.gradle.org/distributions/gradle-8.4-bin.zip
+          unzip -q gradle-8.4-bin.zip
+          export PATH=$PWD/gradle-8.4/bin:$PATH
+          gradle assembleDebug
 
       - uses: actions/upload-artifact@v4
         with:
