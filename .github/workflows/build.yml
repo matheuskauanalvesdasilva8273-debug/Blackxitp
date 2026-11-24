@@ -11,6 +11,8 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+      - name: Unzip project
+        run: unzip BlackxitFF.zip
       - name: Fix structure
         run: |
           cp .github/workflows/build.gradle . 2>/dev/null || true
@@ -22,11 +24,8 @@ jobs:
       - name: Build APK
         env:
           ANDROID_HOME: /usr/local/lib/android/sdk
-        run: gradle assembleDebug || true
-      - name: Find APK
-        run: find . -name "*.apk" 2>/dev/null
+        run: gradle assembleDebug
       - uses: actions/upload-artifact@v4
         with:
           name: BlackxitFF
-          path: "**/*.apk"
-          if-no-files-found: warn
+          path: app/build/outputs/apk/debug/*.apk
